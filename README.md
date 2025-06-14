@@ -34,7 +34,6 @@ Here is a preview of the editor:
 - **Trainer Maker & Editor:** Create new trainers from scratch or tweak existing ones with ease, including items and AI flags.  
 - **Sprite Import:** Drop in `.png` files for trainer fronts and overworld sprites—no manual file juggling required.  
 - **Event Script Generator:** Generate copy-paste-ready poryscript snippets with proper script IDs for Trainer Battles, Dialog, and Starter Pokémon events.  
-- **Auto-save Prompt:** Never lose work—get prompted to save before quitting if there are unsaved changes.  
 - **User-Friendly GUI:** Searchable dropdowns, dynamic Pokémon tabs, and clear status messages help you stay productive.
 
 ---
