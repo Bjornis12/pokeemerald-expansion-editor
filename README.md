@@ -2,7 +2,7 @@
 
 Here is a preview of the editor:
 
-![Editor Preview](Images/preview.png)
+![Editor Preview](Image/preview.png)
 
 ## About This Version
 
