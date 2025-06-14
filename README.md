@@ -1,4 +1,4 @@
-# Expansion Editor — Main Application ![Editor Preview](Image/icon.png) 
+# Expansion Editor — Main Application
 - An editor for pokeemerald-expansion
 
 
