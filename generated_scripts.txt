@@ -1,0 +1,211 @@
+[2025-06-14 01:43:54] Type: STARTER | ID: AbandonedShip_CaptainsOffice_HeiChoose
+Description: Starters: Abomasnow, Abomasnow, Abomasnow
+----------------------------------------
+script AbandonedShip_CaptainsOffice_HeiChoose {
+    lock
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiChoose)
+    waitmessage
+    closemessage
+    setvar VAR_RESULT 0
+    call AbandonedShip_CaptainsOffice_HeiBall1
+    call AbandonedShip_CaptainsOffice_HeiBall2
+    call AbandonedShip_CaptainsOffice_HeiBall3
+    end
+}
+
+script AbandonedShip_CaptainsOffice_HeiBall1 {
+    checkflag FLAG_STARTER_CHOSEN_1
+    if SET, return
+    msgbox("You chose Abomasnow!")
+    givepokemon Abomasnow, 5
+    setflag FLAG_STARTER_CHOSEN_1
+    removeobject THIS_EVENT
+    return
+}
+
+script AbandonedShip_CaptainsOffice_HeiBall2 {
+    checkflag FLAG_STARTER_CHOSEN_2
+    if SET, return
+    msgbox("You chose Abomasnow!")
+    givepokemon Abomasnow, 5
+    setflag FLAG_STARTER_CHOSEN_2
+    removeobject THIS_EVENT
+    return
+}
+
+script AbandonedShip_CaptainsOffice_HeiBall3 {
+    checkflag FLAG_STARTER_CHOSEN_3
+    if SET, return
+    msgbox("You chose Abomasnow!")
+    givepokemon Abomasnow, 5
+    setflag FLAG_STARTER_CHOSEN_3
+    removeobject THIS_EVENT
+    return
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiChoose {
+    format("Choose your starter Pokémon!")
+}
+============================================================
+
+[2025-06-14 01:51:30] Type: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+Description: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
+[2025-06-14 02:02:43] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
+[2025-06-14 02:05:02] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("hei")
+}
+============================================================
+
+[2025-06-14 02:07:23] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
+[2025-06-14 02:09:38] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
+[2025-06-14 02:14:32] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
+[2025-06-14 02:16:23] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
+[2025-06-14 02:17:16] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
+[2025-06-14 02:17:36] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
+[2025-06-14 02:18:19] TYPE: DIALOG | ID: AbandonedShip_CaptainsOffice_Hei_Dialog
+DESC: Dialog: Hei
+----------------------------------------
+script AbandonedShip_CaptainsOffice_Hei_Dialog {
+    faceplayer
+    msgbox(AbandonedShip_CaptainsOffice_Text_HeiDialog)
+    waitmessage
+    closemessage
+    end
+}
+
+text AbandonedShip_CaptainsOffice_Text_HeiDialog {
+    format("Hei")
+}
+============================================================
+
