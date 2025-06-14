@@ -1,4 +1,4 @@
-# Expansion Editor — Main Application
+# Expansion Editor
 - An editor for pokeemerald-expansion
 
 
