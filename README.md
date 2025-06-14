@@ -1,14 +1,14 @@
 # Pokeemerald-Expansion Editor — Main Application
 
-Here is a preview of the editor:
-
-![Editor Preview](Image/preview.png)
 
 ## About This Version
 
 This is a powerful PyQt6-based editor designed to streamline your pokeemerald-expansion workflow.  
 Manage trainers, create new ones, import sprites, and generate clean event scripts—all in one place.  
 
+Here is a preview of the editor:
+
+![Editor Preview](Image/preview.png)
 ### What you get:
 
 - Effortless **trainer editing and creation** with full control over Pokémon stats, moves, abilities, and more.  
