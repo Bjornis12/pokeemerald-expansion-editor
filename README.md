@@ -21,7 +21,7 @@ Here is a preview of the editor:
 ### Important Notes:
 
 - The Event Script Generator **creates new event scripts only** — it does **not** load or edit existing map scripts.  
-- To compile and use generated scripts, you will need [**Poryscript**](https://github.com/huderlem/poryscript), a high-level scripting language compiler for pokeemerald.  
+- To compile and use generated scripts, you will need [**Poryscript**](https://github.com/huderlem/poryscript), a higher-level scripting language compiler for pokeemerald and pokeemerald-expansion.  
 - For attaching scripts to map objects, [**PoryMap**](https://github.com/huderlem/porymap) is highly recommended—a visual map editor tailored for Gen 3 projects.  
 - Currently, imported overworld sprites do **not** have correct palettes applied in-game. Palette handling is a known limitation and may require manual fixes.  
 - **More Event Script types will be added in future releases.**
