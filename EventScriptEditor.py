@@ -30,6 +30,10 @@ class EventScriptEditor(QWidget):
       – The full Poryscript snippet (read-only) for copy-&-paste  
     • Every script is logged to **generated_scripts.txt** in the same folder
       as the .py / .exe.
+    • NEW: each generated script is automatically appended to the selected
+      map’s **scripts.pory** file. If a script with the same ID already
+      exists, the user is warned (in English) that overwriting may break the
+      build and is advised to use a unique name instead.
     """
 
     # ------------------------------------------------------------------ #
@@ -268,7 +272,7 @@ class EventScriptEditor(QWidget):
         self.comboTrainerID.addItems(sorted(ids))
 
     # ------------------------------------------------------------------ #
-    #  LOG                                                               #
+    #  LOGGING                                                           #
     # ------------------------------------------------------------------ #
     def _base_dir(self) -> str:
         return (
@@ -289,6 +293,48 @@ class EventScriptEditor(QWidget):
                 fh.write(entry)
         except Exception as e:
             QMessageBox.critical(self, "Error saving log", str(e))
+
+    # ------------------------------------------------------------------ #
+    #  FILE HELPERS                                                      #
+    # ------------------------------------------------------------------ #
+    def _script_id_exists(self, path: str, sid: str) -> bool:
+        """Return True if a script with the given ID already exists in the file."""
+        if not os.path.isfile(path):
+            return False
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                if line.strip().startswith(f"script {sid} "):
+                    return True
+        return False
+
+    def _append_to_scripts_pory(self, map_rel: str, script: str, ids: list[str]) -> None:
+        """Append script to the map's scripts.pory, checking for duplicates."""
+        path = os.path.join(self.project_folder, "data", "maps", map_rel, "scripts.pory")
+        if not os.path.isfile(path):
+            QMessageBox.critical(self, "Missing File", f"scripts.pory not found:\n{path}")
+            return
+
+        # check for duplicate IDs
+        for sid in ids:
+            if self._script_id_exists(path, sid):
+                reply = QMessageBox.question(
+                    self,
+                    "Script already exists",
+                    f"A script named '{sid}' already exists in scripts.pory.\n\n"
+                    "Overwriting may break other parts of the pokeemerald-expansion build "
+                    "if the script is already referenced. It is recommended to save with a "
+                    "unique name instead.\n\nDo you want to overwrite it?",
+                    QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                )
+                if reply == QMessageBox.StandardButton.No:
+                    return  # cancel entire operation
+                break  # user answered Yes → proceed
+
+        try:
+            with open(path, "a", encoding="utf-8") as f:
+                f.write(f"\n\n{script.strip()}\n")
+        except Exception as e:
+            QMessageBox.critical(self, "Error Writing File", str(e))
 
     # ------------------------------------------------------------------ #
     #  SCRIPT GENERATORS                                                 #
@@ -348,6 +394,7 @@ text {map_name}_Text_{name}PostBattle {{
         self.trainer_hint.setPlainText(sid)
         self.trainer_output.setPlainText(script)
         self._log("trainer", sid, f"Intro: {intro}", script)
+        self._append_to_scripts_pory(map_rel, script, [sid])
 
     # ---- Dialog ------------------------------------------------------- #
     @pyqtSlot()
@@ -387,6 +434,7 @@ text {map_name}_Text_{name}Dialog {{
         self.dialog_hint.setPlainText(sid)
         self.dialog_output.setPlainText(script)
         self._log("dialog", sid, f"Dialog: {dialog}", script)
+        self._append_to_scripts_pory(map_rel, script, [sid])
 
     # ---- Starter ------------------------------------------------------ #
     @pyqtSlot()
@@ -480,6 +528,7 @@ text {map_name}_Text_{name}Choose {{
             f"Starters: {s1}, {s2}, {s3}",
             script,
         )
+        self._append_to_scripts_pory(map_rel, script, [sid_choose, sid_b1, sid_b2, sid_b3])
 
 
 # ---------------------------------------------------------------------- #
