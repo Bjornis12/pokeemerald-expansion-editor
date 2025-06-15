@@ -45,4 +45,3 @@ Here is a preview of the editor:
 3. Edit or create trainers using the Trainer Maker.  
 4. Import trainer sprites as needed.  
 5. Generate event scripts using the Event Script Generator tab.  
-6. Save all changes before exiting to avoid losing progress.
